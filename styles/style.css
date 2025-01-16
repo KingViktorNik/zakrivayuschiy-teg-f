@@ -16,7 +16,7 @@
   max-inline-size: 700px;
   font-family: var(--base-font), sans-serif;
   font-variation-settings: "wght" var(--weight-text-main);
-  margin: 0 clamp(0rem, -8.2526rem + 35.2113vw, 23.4375rem);
+  margin: 0 auto;
 }
 
 .header {
@@ -25,10 +25,10 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  block-size: 368px;
   font-family: var(--accent-font);
   border: 2px solid black;
   margin-block: 100px;
+  padding-block: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
 }
 
 .header__title {
@@ -45,17 +45,35 @@
 }
 
 .card__title {
-  padding: 3px 10px;
+  padding: 5px 10px;
   font-size: 18px;
   font-variation-settings: "wght" var(--weight-text-header);
 }
 
 .card__img {
+  position: relative;
+}
+
+.card__img img {
   display: block;
   inline-size: 100%;
   object-fit: cover;
   object-position: center;
   border-block: 2px solid #000;
+}
+
+.card__label {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  color: currentColor;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-shadow:
+    -1px 0 #fff,
+    0 1px #fff,
+    1px 0 #fff,
+    0 -1px #fff;
 }
 
 .card__text {
@@ -67,7 +85,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 12px;
+  gap: 3px;
   margin: 25px;
 }
 
@@ -76,8 +94,15 @@
   background-color: transparent;
 }
 
+.like-icon {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  block-size: 35px;
+}
+
 .card__like-button {
-  padding: 10.5px 37px;
+  padding: 11px 35px;
   border: 2px solid #000;
   font-family: var(--accent-font);
   font-size: 14px;
@@ -99,3 +124,12 @@
     padding-block-end: 6px;
   }
 }
+
+/* @supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+
+  .card__label {
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px #fff;
+    text-shadow: none;
+  }
+}  */

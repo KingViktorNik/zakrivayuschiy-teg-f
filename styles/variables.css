@@ -1,7 +1,10 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
 :root {
-    --base-font: Inter-Variable, sans-serif;
-    --accent-font: PressStart2P-Regular, sans-serif;
-    --weight-text-header: 700;
-    --weight-text-main: 400;
+  --base-font: inter-variable, sans-serif;
+  --accent-font: pressstart2p-regular, sans-serif;
+  --weight-text-header: 700;
+  --weight-text-main: 400;
+  --like-icon-sparks-color: #fff;
+  --like-icon-contour-color: #000;
 }

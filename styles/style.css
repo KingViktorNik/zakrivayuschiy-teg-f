@@ -74,6 +74,8 @@
     0 1px #fff,
     1px 0 #fff,
     0 -1px #fff;
+
+  mix-blend-mode: hard-light;
 }
 
 .card__text {
@@ -101,8 +103,7 @@
   block-size: 35px;
 }
 
-.card__like-button {
-  padding: 11px 35px;
+.button {
   border: 2px solid #000;
   font-family: var(--accent-font);
   font-size: 14px;
@@ -110,7 +111,30 @@
   background-color: transparent;
 }
 
+.card__like-button {
+  padding: 11px 35px;
+}
+
 .button__text {
+}
+
+.save-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0 103px;
+}
+
+.save-block__button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 18.5px 21px;
+}
+
+.save-block__button svg {
+  display: block;
+  block-size: 21px;
 }
 
 @media (width <= 375px) {
@@ -125,11 +149,11 @@
   }
 }
 
-/* @supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+@supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
 
   .card__label {
     -webkit-text-stroke: 1px #fff;
     text-stroke: 1px #fff;
     text-shadow: none;
   }
-}  */
+} 

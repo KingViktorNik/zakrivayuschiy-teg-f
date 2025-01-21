@@ -115,11 +115,36 @@
 }
 
 .button {
+  position: relative;
   border: 2px solid var(--base-color, #000);;
   font-family: var(--accent-font);
   font-size: 14px;
   background-color: var(--bg-color, #FFF);
   color: var(--base-color, #000);
+}
+
+.button__text{
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  top: -4px;
+  left: -4px;
+  background-color: transparent;
+  box-shadow: 2px 2px 0 var(--base-color, #000);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible::before {
+  transform: translate(2px, 2px);
+  opacity: 1;
 }
 
 .card__icon-button {
@@ -143,10 +168,6 @@
   align-items: center;
   gap: 8px;
   padding: 18.5px 21px;
-}
-
-.save-button__text{
-
 }
 
 .save-button__image {

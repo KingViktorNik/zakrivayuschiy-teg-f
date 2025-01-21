@@ -11,69 +11,85 @@
 */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  max-inline-size: 700px;
+  background-color: var(--bg-color, #FFF);
+  /* Временно */
+  background-image: url(https://image.fonwall.ru/o/al/city-landscapes-nature.jpeg?auto=compress&fit=resize&w=1200&h=675&display=large&domain=img3.fonwall.ru);
+  /* Временно */
+  backdrop-filter: blur(3px);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   font-family: var(--base-font), sans-serif;
-  font-variation-settings: "wght" var(--weight-text-main);
-  margin: 0 auto;
+  font-variation-settings: "wght" var(--weight-font-normal, sans-serif);
 }
 
 .header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 20px;
-  font-family: var(--accent-font);
-  border: 2px solid black;
+  inline-size: 100%;
+  max-inline-size: 700px;
   margin-block: 100px;
+  border: 2px solid var(--base-color, #000);
   padding-block: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
-}
-
-.header__title {
-  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-}
-
-.header__text {
-  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  background-color: var(--bg-color, #FFF);
+  color: var(--base-color);
+  font-family: var(--accent-font, sans-serif);
   text-transform: uppercase;
 }
 
+.header__logo {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__title {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
 .card {
-  border: 2px solid #000;
+  max-inline-size: 700px;
+  border: 2px solid var(--base-color, #000);
+  background-color: var(--bg-color, #FFF);
+  color: var(--base-color, #000);
 }
 
 .card__title {
   padding: 5px 10px;
   font-size: 18px;
-  font-variation-settings: "wght" var(--weight-text-header);
+  font-variation-settings: "wght" var(--weight-font-bold, 700);
 }
 
-.card__img {
+.card__image-wrapper {
   position: relative;
 }
 
-.card__img img {
+.card__image-wrapper__image {
   display: block;
+  border-block: 2px solid var(--base-color, #000);
   inline-size: 100%;
   object-fit: cover;
   object-position: center;
-  border-block: 2px solid #000;
+  aspect-ratio: 1 / 1;
 }
 
-.card__label {
+.card__image-wrapper__caption {
   position: absolute;
   right: 25px;
   top: 25px;
   color: currentColor;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, sans-serif);
   font-size: 14px;
   text-shadow:
-    -1px 0 #fff,
-    0 1px #fff,
-    1px 0 #fff,
-    0 -1px #fff;
+    -1px 0 var(--bg-color, #FFF),
+    0 1px var(--bg-color, #FFF),
+    1px 0 var(--bg-color, #FFF),
+    0 -1px var(--bg-color, #FFF);
 
   mix-blend-mode: hard-light;
 }
@@ -91,11 +107,6 @@
   margin: 25px;
 }
 
-.card__icon-button {
-  border-width: 0;
-  background-color: transparent;
-}
-
 .like-icon {
   display: block;
   object-fit: cover;
@@ -107,8 +118,12 @@
   border: 2px solid #000;
   font-family: var(--accent-font);
   font-size: 14px;
+  background-color: var(--bg-color, #FFF);
   color: currentColor;
-  background-color: transparent;
+}
+
+.card__icon-button {
+  border-width: 0;
 }
 
 .card__like-button {
@@ -122,6 +137,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  max-inline-size: 700px;
   padding: 50px 0 103px;
 }
 
@@ -149,11 +165,11 @@
   }
 }
 
-@supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+@supports((text-stroke: 1px var(--bg-color, #FFF)) or (-webkit-text-stroke: 1px var(--bg-color, #FFF))) {
 
   .card__label {
-    -webkit-text-stroke: 1px #fff;
-    text-stroke: 1px #fff;
+    -webkit-text-stroke: 1px var(--bg-color, #FFF);
+    text-stroke: 1px var(--bg-color, #FFF);
     text-shadow: none;
   }
 } 

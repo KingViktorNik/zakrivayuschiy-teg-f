@@ -1,10 +1,14 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
 :root {
-  --base-font: inter-variable, sans-serif;
-  --accent-font: pressstart2p-regular, sans-serif;
-  --weight-text-header: 700;
-  --weight-text-main: 400;
+  --base-font: inter-variable;
+  --accent-font: pressstart2p-regular;
+  --weight-font-bold: 700;
+  --weight-font-normal: 400;
+  /* --bg-color: #FFF; */
+  /* Временно */
+  --bg-color: #f5daa7;
+  --base-color: #000;
   --like-icon-sparks-color: red;
   --like-icon-contour-color: #000;
 }

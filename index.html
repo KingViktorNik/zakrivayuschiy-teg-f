@@ -40,8 +40,8 @@
         <p class="card__text">
           Место для ваших воспоминаний о начале обучения.
         </p>
-        <div class="card__buttons">
-          <button class="button card__icon-button">
+        <div class="card__like-wrapper">
+          <button class="button card__icon-button" type="button">
             <svg class="like-icon" viewBox="0 0 39 36">
               <g class="heart">
                 <path
@@ -67,18 +67,36 @@
               />
             </svg>
           </button>
-          <button class="button card__like-button">
+          <button class="button card__like-button" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
       </section>
       <div class="save-block">
-        <button class="button save-block__button">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
-            <use href="./svg/floppy.svg#floppy">
-          </svg>             
-          <span class="button__text">Сохранить на память</span>
+        <button class="button save-button" type="button"
+          onclick="window['save-id'].showModal()"
+          aria-controls="save-id"
+        >
+          <span class="save-button__text">
+            <svg class="save-button__image">
+              <use href="./svg/floppy.svg#floppy"></use>
+            </svg>             
+            Сохранить на память
+          </span>
         </button>
+        <dialog id="save-id" class="dialog-save">
+          <form method="dialog">
+            <svg class="dialog-save__image">
+              <use href="./svg/floppy.svg#floppy"></use>
+            </svg>
+            <h2 class="dialog-save__title">Вставьте дискету, чтобы продолжить</h2>
+            <button class="dialog-save__button button"
+              autofocus
+            >
+              <span class="button__text">ок</span>
+            </button>
+          </form>
+        </dialog>        
       </div>
     </main>
     <script src="./scripts/like.js"></script>

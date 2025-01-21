@@ -99,7 +99,7 @@
   font-size: 18px;
 }
 
-.card__buttons {
+.card__like-wrapper {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -115,11 +115,11 @@
 }
 
 .button {
-  border: 2px solid #000;
+  border: 2px solid var(--base-color, #000);;
   font-family: var(--accent-font);
   font-size: 14px;
   background-color: var(--bg-color, #FFF);
-  color: currentColor;
+  color: var(--base-color, #000);
 }
 
 .card__icon-button {
@@ -130,9 +130,6 @@
   padding: 11px 35px;
 }
 
-.button__text {
-}
-
 .save-block {
   display: flex;
   justify-content: center;
@@ -141,16 +138,70 @@
   padding: 50px 0 103px;
 }
 
-.save-block__button {
+.save-button {
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 18.5px 21px;
 }
 
-.save-block__button svg {
-  display: block;
+.save-button__text{
+
+}
+
+.save-button__image {
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1 / 1;
   block-size: 21px;
+}
+
+.dialog-save {
+  border: 2px solid var(--base-color);
+  padding: 30px;
+  color: var(--base-color);
+  background-color: var(--bg-color);
+  inline-size: 357px;
+}
+
+.dialog-save  form {
+  display: grid;
+  grid-template-columns: min-content 2fr;
+  justify-content: space-between;
+  align-content: center;
+  gap: 20px 30px;
+}
+
+.dialog-save:not([open]) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dialog-save::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.dialog-save__image {
+  align-self: center;
+  inline-size: 39px;
+  aspect-ratio: 1 / 1;
+}
+
+.dialog-save__title {
+  justify-self: start;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.dialog-save__button {
+  position: relative;
+  grid-column: 1 / -1;
+  text-align: center;
+  text-transform: uppercase;
+  inline-size: 100%;
+  min-block-size: 38px;
 }
 
 @media (width <= 375px) {

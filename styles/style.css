@@ -16,14 +16,17 @@
   align-items: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  background-color: var(--bg-color, #FFF);
-  /* Временно */
-  background-image: url(https://image.fonwall.ru/o/al/city-landscapes-nature.jpeg?auto=compress&fit=resize&w=1200&h=675&display=large&domain=img3.fonwall.ru);
+  background-color: var(--bg-color, #fff);
   /* Временно */
   backdrop-filter: blur(3px);
+  background-image: 
+  /* Временно */ url(https://image.fonwall.ru/o/al/city-landscapes-nature.jpeg?auto=compress&fit=resize&w=1200&h=675&display=large&domain=img3.fonwall.ru),
+    repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(0deg, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(#e7e7e7 0.01%, #1a1a1a 100%);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   font-family: var(--base-font), sans-serif;
   font-variation-settings: "wght" var(--weight-font-normal, sans-serif);
 }
@@ -38,7 +41,7 @@
   margin-block: 100px;
   border: 2px solid var(--base-color, #000);
   padding-block: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
-  background-color: var(--bg-color, #FFF);
+  background-color: var(--bg-color, #fff);
   color: var(--base-color);
   font-family: var(--accent-font, sans-serif);
   text-transform: uppercase;
@@ -55,7 +58,7 @@
 .card {
   max-inline-size: 700px;
   border: 2px solid var(--base-color, #000);
-  background-color: var(--bg-color, #FFF);
+  background-color: var(--bg-color, #fff);
   color: var(--base-color, #000);
 }
 
@@ -86,10 +89,10 @@
   font-family: var(--accent-font, sans-serif);
   font-size: 14px;
   text-shadow:
-    -1px 0 var(--bg-color, #FFF),
-    0 1px var(--bg-color, #FFF),
-    1px 0 var(--bg-color, #FFF),
-    0 -1px var(--bg-color, #FFF);
+    -1px 0 var(--bg-color, #fff),
+    0 1px var(--bg-color, #fff),
+    1px 0 var(--bg-color, #fff),
+    0 -1px var(--bg-color, #fff);
 
   mix-blend-mode: hard-light;
 }
@@ -116,18 +119,18 @@
 
 .button {
   position: relative;
-  border: 2px solid var(--base-color, #000);;
+  border: 2px solid var(--base-color, #000);
   font-family: var(--accent-font);
   font-size: 14px;
-  background-color: var(--bg-color, #FFF);
+  background-color: var(--bg-color, #fff);
   color: var(--base-color, #000);
 }
 
-.button__text{
+.button__text {
 }
 
 .button::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   top: -4px;
@@ -135,7 +138,9 @@
   background-color: transparent;
   box-shadow: 2px 2px 0 var(--base-color, #000);
   opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .button:focus {
@@ -185,7 +190,7 @@
   inline-size: 357px;
 }
 
-.dialog-save  form {
+.dialog-save form {
   display: grid;
   grid-template-columns: min-content 2fr;
   justify-content: space-between;
@@ -237,11 +242,14 @@
   }
 }
 
-@supports((text-stroke: 1px var(--bg-color, #FFF)) or (-webkit-text-stroke: 1px var(--bg-color, #FFF))) {
+@supports (
+  (text-stroke: 1px var(--bg-color, #fff)) or
+    (-webkit-text-stroke: 1px var(--bg-color, #fff))
+) {
 
   .card__label {
-    -webkit-text-stroke: 1px var(--bg-color, #FFF);
-    text-stroke: 1px var(--bg-color, #FFF);
+    -webkit-text-stroke: 1px var(--bg-color, #fff);
+    text-stroke: 1px var(--bg-color, #fff);
     text-shadow: none;
   }
-} 
+}

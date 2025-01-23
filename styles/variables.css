@@ -9,6 +9,10 @@
   /* Временно */
   --bg-color: #f5daa7;
   --base-color: #000;
-  --like-icon-sparks-color: red;
+
+  /* переменные иконки сердца */
+  
+  --like-icon-sparks-color: #f00;
   --like-icon-contour-color: #000;
+  --like-icon-active-color: #f00;
 }

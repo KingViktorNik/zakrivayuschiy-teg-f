@@ -177,6 +177,7 @@
   display: flex;
   border: none;
   background-color: var(--bg-color, #fff);
+  cursor: pointer;
 }
 
 .card__icon-button::before {
@@ -289,4 +290,55 @@
     text-stroke: 1px var(--bg-color, #fff);
     text-shadow: none;
   }
+}
+
+/* Сердце */
+
+/* иконка LIKE */
+
+
+.sparks {
+  opacity: 0;
+}
+
+.core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s;
+}
+
+.card__icon-button:hover .like-icon .core {
+  fill: currentColor;
+  transition: fill 0.3s;
+}
+
+.card__icon-button:active .like-icon .core {
+  fill: var(--like-icon-active-color);
+  transition: fill 0.3s;
+}
+
+.main-body {
+  fill: transparent;
+  transition: fill 0.3s;
+}
+
+.card__icon-button:hover .like-icon .main-body {
+  fill: currentColor;
+  transition: fill 0.3s 0.05s;
+}
+
+.card__icon-button:active .like-icon .main-body:not(.is-liked) {
+  fill: var(--like-icon-active-color);
+  transition: fill 0.3s 0.05s;
+}
+
+.is-liked .heart * {
+  fill: var(--like-icon-active-color);
+}
+
+.card__icon-button .is-liked {
+  animation: icon-licke-active 0.3s 0.1s 2 ease-in alternate;
+}
+
+.card__icon-button .is-liked .sparks {
+  animation: icon-licke-sparks-active 0.3s 0.3s 2 ease-in alternate;
 }

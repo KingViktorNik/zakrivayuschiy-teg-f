@@ -1,17 +1,15 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+/* В этом файле хранятся все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
 :root {
   --base-font: inter-variable;
   --accent-font: pressstart2p-regular;
   --weight-font-bold: 700;
   --weight-font-normal: 400;
-  /* --bg-color: #FFF; */
-  /* Временно */
-  --bg-color: #f5daa7;
+  --bg-color: #fff;
   --base-color: #000;
 
   /* переменные иконки сердца */
-  
+
   --like-icon-sparks-color: #f00;
   --like-icon-contour-color: #000;
   --like-icon-active-color: #f00;

@@ -71,6 +71,80 @@
   z-index: 1;
 }
 
+/* фильтры */
+
+.filter-blur {
+  filter: blur(0.3rem);
+}
+
+.filter-grayscale {
+  filter: grayscale(0.9);
+}
+
+.filter-invert {
+  filter: invert(0.9);
+}
+
+.filter-contrast-brightness {
+  filter: contrast(1.2) brightness(1.1);
+}
+
+.filter-brightness-hue-rotate {
+  filter: hue-rotate(-90deg) brightness(1.4);
+}
+
+.filter-brightness-hue-rotate_2 {
+  filter: hue-rotate(90deg) brightness(1.5);
+}
+
+.filter-saturate {
+  filter: saturate(5);
+}
+
+.filter-radial-gradient-center::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    #ffc846 20%,
+    #ff5900 70%,
+    #98ff07 85%
+  );
+  mix-blend-mode: color;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.filter-grayscale-linear-gradient::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(#000 10%, transparent 40% 70%, #000 90%);
+  filter: grayscale(1);
+  mix-blend-mode: color;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.filter-radial-gradient-bottom::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    at bottom,
+    transparent 15%,
+    #eeb4e9,
+    #41c0c0,
+    #cafbfb,
+    #e4d0a0,
+    #4343e0
+  );
+  mix-blend-mode: multiply;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
 /* пораметры страници */
 
 .page {
@@ -119,7 +193,7 @@
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
-/* секция  */
+/* секция */
 
 .card {
   max-inline-size: 700px;
@@ -133,7 +207,7 @@
   margin-block-end: 0;
 }
 
-/* заголовок секции  */
+/* заголовок секции */
 
 .card__title {
   padding: 5px 10px;
@@ -146,13 +220,13 @@
 
 .card__image-wrapper {
   position: relative;
+  margin-block-end: 26px;
+  border-block: 2px solid var(--base-color, #000);
 }
 
 .card__image-wrapper__image {
   display: block;
   inline-size: 100%;
-  margin-block-end: 30px;
-  border-block: 2px solid var(--base-color, #000);
   object-fit: cover;
   object-position: center;
   aspect-ratio: 1 / 1;

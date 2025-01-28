@@ -101,6 +101,14 @@
   filter: saturate(5);
 }
 
+.filter-sepia {
+  filter: sepia(50%);
+}
+
+.filter-hue-rotate {
+  filter: hue-rotate(290deg);
+}
+
 .filter-radial-gradient-center::after {
   content: "";
   position: absolute;
@@ -108,11 +116,10 @@
   background-image: radial-gradient(
     circle,
     #ffc846 20%,
-    #ff5900 70%,
-    #98ff07 85%
+    transparent 70%,
+    #212136 85%
   );
   mix-blend-mode: color;
-  inline-size: 100%;
   block-size: 100%;
 }
 
@@ -133,7 +140,7 @@
   inset: 0;
   background-image: radial-gradient(
     at bottom,
-    transparent 15%,
+    transparent 75%,
     #eeb4e9,
     #41c0c0,
     #cafbfb,

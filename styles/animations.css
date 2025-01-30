@@ -10,24 +10,24 @@
 
 */
 
-@keyframes icon-licke-active {
+@keyframes zoom-in-animation {
 
-  0% {
+  from {
     scale: 1;
   }
 
-  100% {
+  to {
     scale: 1.25;
   }
 }
 
-@keyframes icon-licke-sparks-active {
+@keyframes fade-in-animation {
 
-  0% {
+  from {
     opacity: 0;
   }
 
-  100% {
+  to {
     opacity: 1;
   }
 }
